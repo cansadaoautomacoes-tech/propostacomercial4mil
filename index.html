@@ -10,10 +10,42 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
+    /* Grid de planos na seção Solução */
+    .planos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Tabela responsiva */
+    .table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
     @media (max-width: 768px) {
-      #planos-grid,
-      #planos-grid ~ div > div:first-child {
+      .planos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Cards de duas colunas inline viram uma coluna */
+      .challenge-grid[style*="repeat(2"] {
         grid-template-columns: 1fr !important;
+        max-width: 100% !important;
+      }
+
+      /* Grids inline dos cards de análise de custos */
+      div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .premium-table th:nth-child(2),
+      .premium-table td:nth-child(2) {
+        display: none;
       }
     }
   </style>
@@ -32,7 +64,6 @@
         <li><a href="#problema">O Problema</a></li>
         <li><a href="#solucao">Solução</a></li>
         <li><a href="#consignacao">Estratégia</a></li>
-        <li><a href="#investimento">Investimento</a></li>
       </ul>
       <a href="#contact" class="btn btn--primary btn--sm">Aprovar Estrutura</a>
       <button class="navbar__toggle" id="navToggle" aria-label="Abrir menu">
@@ -48,7 +79,6 @@
       <li><a href="#problema">O Problema</a></li>
       <li><a href="#solucao">Solução</a></li>
       <li><a href="#consignacao">Estratégia</a></li>
-      <li><a href="#investimento">Investimento</a></li>
       <li><a href="#contact" class="btn btn--primary">Aprovar Estrutura</a></li>
     </ul>
   </div>
@@ -217,12 +247,6 @@
         <em>Sem considerar comissões, encargos trabalhistas, ferramentas, reuniões de alinhamento e o custo invisível de gerenciar múltiplos fornecedores ao mesmo tempo.</em>
       </div>
 
-      <div class="fade-in" style="--delay: .3s; margin-top: 40px; text-align: center;">
-        <a href="#investimento" class="btn btn--primary btn--glow btn--lg">
-          Ver Investimento Estratégico
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
     </div>
   </section>
 
@@ -239,7 +263,7 @@
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; margin: 0 auto;" class="fade-in" id="planos-grid">
+      <div class="planos-grid fade-in" style="--delay: .1s;">
 
         <!-- Plano Essencial -->
         <div class="service-card fade-in" style="--delay: .1s; position: relative;">
@@ -364,118 +388,6 @@
     </div>
   </section>
 
-  <!-- ===== SESSÃO 5: OFERTA (RESULTS) ===== -->
-  <section class="section section--results" style="background: var(--bg-card); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);" id="investimento">
-    <div class="container">
-      <div class="section__header" style="margin-bottom: 56px;">
-        <span class="label fade-in">INVESTIMENTO ESTRATÉGICO</span>
-        <h2 class="section__title fade-in" style="--delay: .05s">
-          Escolha o plano.<br>
-          <span class="text-gradient">Comece agora.</span>
-        </h2>
-        <p class="hero__subtitle fade-in" style="--delay: .1s; margin-top: 20px;">
-          Dois planos, uma única gestão centralizada. Sem precisar contratar múltiplos profissionais ou gerenciar fornecedores separados.
-        </p>
-      </div>
-
-      <!-- Dois cards de plano -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 920px; margin: 0 auto 48px;" class="fade-in" style="--delay: .1s;">
-
-        <!-- Plano Essencial -->
-        <div class="stat-card" style="padding: 44px 36px; background: var(--bg-primary); position: relative; overflow: hidden; display: flex; flex-direction: column;">
-          <div style="position: absolute; top: -40px; right: -40px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);"></div>
-          <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 11px; color: var(--text-muted); margin-bottom: 20px;">Plano Essencial</p>
-          <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px;">
-            <span style="font-size: 20px; color: var(--text-secondary); font-weight: 500;">R$</span>
-            <span style="font-size: 64px; font-weight: 900; color: var(--white); line-height: 1;">2.500</span>
-            <span style="font-size: 16px; color: var(--text-muted);">/mês</span>
-          </div>
-          <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 32px; line-height: 1.6;">Operação digital ativa com foco em tráfego, presença e automação.</p>
-          <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; flex: 1;">
-            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 11px; color: var(--text-muted); margin-bottom: 16px;">Incluso</p>
-            <div style="display: flex; flex-direction: column; gap: 14px;">
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span style="color: var(--white); font-size: 15px;">Gestão de Tráfego Pago</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span style="color: var(--white); font-size: 15px;">Social Media</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span style="color: var(--white); font-size: 15px;">Automação para Instagram</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span style="color: var(--white); font-size: 15px;">Automação Grupo de Repasse</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span style="color: var(--orange); font-size: 15px; font-weight: 600;">Presencial semanal na loja</span>
-              </div>
-            </div>
-          </div>
-          <div style="margin-top: 32px; padding: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; text-align: center;">
-            <p style="color: var(--text-muted); font-size: 13px;">Vs. contratar separado: <span style="color: rgba(255,255,255,0.5); text-decoration: line-through;">R$ 7.000/mês</span></p>
-          </div>
-        </div>
-
-        <!-- Plano Completo -->
-        <div class="stat-card" style="padding: 44px 36px; background: var(--bg-primary); position: relative; overflow: hidden; border: 1px solid rgba(0,208,132,0.3); display: flex; flex-direction: column;">
-          <div style="position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(0,208,132,0.18) 0%, transparent 70%);"></div>
-          <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 11px; color: var(--orange); margin-bottom: 20px;">Plano Completo</p>
-          <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px;">
-            <span style="font-size: 20px; color: var(--text-secondary); font-weight: 500;">R$</span>
-            <span style="font-size: 64px; font-weight: 900; color: var(--white); line-height: 1; text-shadow: 0 0 40px rgba(0,208,132,0.3);">4.000</span>
-            <span style="font-size: 16px; color: var(--text-muted);">/mês</span>
-          </div>
-          <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 32px; line-height: 1.6;">Estrutura digital integrada cobrindo as duas operações completas.</p>
-          <div style="border-top: 1px solid rgba(0,208,132,0.15); padding-top: 28px; flex: 1;">
-            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 11px; color: var(--text-muted); margin-bottom: 16px;">Tudo do Essencial, mais:</p>
-            <div style="display: flex; flex-direction: column; gap: 14px;">
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span style="color: var(--white); font-size: 15px;">Sites e landing pages</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span style="color: var(--white); font-size: 15px;">Trackeamento e métricas</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span style="color: var(--white); font-size: 15px;">Marketing digital e blog</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span style="color: var(--white); font-size: 15px;">Gestão do grupo de repasse</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span style="color: var(--white); font-size: 15px;">Captação de consignação</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span style="color: var(--orange); font-size: 15px; font-weight: 600;">Presencial semanal na loja</span>
-              </div>
-            </div>
-          </div>
-          <div style="margin-top: 32px; padding: 14px; background: rgba(0,208,132,0.08); border: 1px solid rgba(0,208,132,0.2); border-radius: 10px; text-align: center;">
-            <p style="color: var(--text-muted); font-size: 13px;">Vs. contratar separado: <span style="color: rgba(255,255,255,0.5); text-decoration: line-through;">R$ 17.100/mês</span></p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Bloco economia geral -->
-      <div class="fade-in" style="--delay: .2s; max-width: 920px; margin: 0 auto; padding: 28px 36px; background: rgba(0,208,132,0.06); border: 1px solid rgba(0,208,132,0.18); border-radius: 16px; text-align: center;">
-        <p style="color: var(--text-muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Independente do plano escolhido</p>
-        <p style="color: var(--white); font-size: 18px; font-weight: 700; margin-bottom: 6px;">Gestão centralizada · Sem retrabalho · Sem custo de equipe interna</p>
-        <p style="color: var(--text-muted); font-size: 14px;">Uma única referência para marketing, automação e operação digital — integrada, estratégica e com acompanhamento contínuo.</p>
-      </div>
-
-    </div>
-  </section>
 
   <!-- ===== SESSÃO 6: FECHAMENTO / CTA ===== -->
   <section class="section section--cta" id="contact">
@@ -524,7 +436,7 @@
         </div>
         <div class="footer__col">
           <h5>Ação</h5>
-          <a href="#investimento">Ver Investimento</a>
+          <a href="#solucao">Ver Planos</a>
           <a href="#contact">Aprovar Proposta</a>
         </div>
       </div>
