@@ -9,6 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    @media (max-width: 768px) {
+      #planos-grid,
+      #planos-grid ~ div > div:first-child {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -68,10 +76,6 @@
       </p>
 
       <div class="hero__actions fade-in" style="--delay: .3s">
-        <a href="#investimento" class="btn btn--primary btn--glow">
-          Ver Investimento
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
         <a href="#cenario" class="btn btn--ghost">Entender o Cenário</a>
       </div>
     </div>
@@ -226,55 +230,55 @@
   <section class="section section--services" id="solucao">
     <div class="container">
       <div class="section__header">
-        <span class="label fade-in">A PROPOSTA</span>
+        <span class="label fade-in">OS PLANOS</span>
         <h2 class="section__title fade-in" style="--delay: .05s">
-          Uma única <span class="text-gradient">estrutura estratégica</span>
+          Escolha a estrutura <span class="text-gradient">ideal para você</span>
         </h2>
         <p class="hero__subtitle fade-in" style="--delay: .1s" style="margin-top: 20px;">
-          Ao invés de contratar e gerenciar múltiplos profissionais, a operação digital é centralizada. Foco em presença, captação e fortalecimento da marca com economia operacional.
+          Dois planos desenhados para diferentes momentos da operação. Ambos centralizam a gestão digital, eliminam a necessidade de múltiplos fornecedores e geram resultado desde o primeiro mês.
         </p>
       </div>
 
-      <div class="services-grid">
-        <div class="service-card fade-in" style="--delay: .1s">
-          <div class="service-card__number">01</div>
-          <h3 class="service-card__title">Fundação e Infraestrutura</h3>
-          <p class="service-card__text">A base tecnológica necessária para que a agência converta visitantes em oportunidades reais de negócio.</p>
-          <ul class="service-card__list">
-            <li>Criação e manutenção de sites e landing pages</li>
-            <li>Estrutura de trackeamento e métricas precisas</li>
-            <li>Criação de automações de atendimento e processos</li>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; margin: 0 auto;" class="fade-in" id="planos-grid">
+
+        <!-- Plano Essencial -->
+        <div class="service-card fade-in" style="--delay: .1s; position: relative;">
+          <div style="display: inline-block; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; padding: 4px 12px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 20px;">PLANO ESSENCIAL</div>
+          <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px;">
+            <span style="font-size: 18px; color: var(--text-secondary);">R$</span>
+            <span style="font-size: 52px; font-weight: 900; color: var(--white); line-height: 1;">2.500</span>
+            <span style="font-size: 15px; color: var(--text-muted);">/mês</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 28px;">Operação digital ativa com foco em tráfego, presença e automação.</p>
+          <ul class="service-card__list" style="margin-bottom: 0;">
+            <li>Gestão de Tráfego Pago</li>
+            <li>Social Media</li>
+            <li>Automação para Instagram</li>
+            <li>Automação Grupo de Repasse</li>
+            <li style="color: var(--orange); font-weight: 600;">Presencial semanal na loja</li>
           </ul>
         </div>
 
-        <div class="service-card service-card--featured fade-in" style="--delay: .15s">
-          <div class="service-card__badge">ACOMPANHAMENTO</div>
-          <div class="service-card__number">02</div>
-          <h3 class="service-card__title">Atração e Conversão</h3>
-          <p class="service-card__text">Operação ativa para colocar a marca na frente das pessoas certas, no momento exato de compra ou venda.</p>
-          <ul class="service-card__list">
-            <li>Gestão de Tráfego Pago avançada</li>
-            <li>Estratégias digitais para captação de consignação</li>
-            <li>Gestão do grupo de repasse e logística digital</li>
+        <!-- Plano Completo -->
+        <div class="service-card service-card--featured fade-in" style="--delay: .15s; position: relative;">
+          <div style="display: inline-block; background: rgba(0,208,132,0.15); border: 1px solid rgba(0,208,132,0.3); border-radius: 6px; padding: 4px 12px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--orange); text-transform: uppercase; margin-bottom: 20px;">PLANO COMPLETO</div>
+          <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px;">
+            <span style="font-size: 18px; color: var(--text-secondary);">R$</span>
+            <span style="font-size: 52px; font-weight: 900; color: var(--white); line-height: 1;">4.000</span>
+            <span style="font-size: 15px; color: var(--text-muted);">/mês</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 28px;">Estrutura digital integrada cobrindo as duas operações completas.</p>
+          <ul class="service-card__list" style="margin-bottom: 0;">
+            <li>Tudo do Plano Essencial</li>
+            <li>Sites e landing pages</li>
+            <li>Trackeamento e métricas</li>
+            <li>Marketing digital e blog</li>
+            <li>Gestão do grupo de repasse</li>
+            <li>Captação de consignação</li>
+            <li style="color: var(--orange); font-weight: 600;">Presencial semanal na loja</li>
           </ul>
         </div>
 
-        <div class="service-card fade-in" style="--delay: .2s">
-          <div class="service-card__number">03</div>
-          <h3 class="service-card__title">Posicionamento de Marca</h3>
-          <p class="service-card__text">Construção de autoridade contínua no mercado para que a agência seja a escolha óbvia da região.</p>
-          <ul class="service-card__list">
-            <li>Gestão estratégica de Redes Sociais</li>
-            <li>Estratégia de conteúdo e posicionamento</li>
-            <li>Estruturação de blog e presença orgânica (SEO)</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="hero__proof fade-in" style="--delay: .3s; margin-top: 40px;">
-        <span class="hero__proof-text" style="color: var(--white); font-weight: 500; text-align: center; font-size: 15px;">
-          <strong style="color: var(--orange);">Bônus Estratégico:</strong> Acompanhamento presencial na loja 1 vez por semana para alinhamentos estratégicos, operacionais e garantia de execução integrada.
-        </span>
       </div>
     </div>
   </section>
@@ -363,98 +367,113 @@
   <!-- ===== SESSÃO 5: OFERTA (RESULTS) ===== -->
   <section class="section section--results" style="background: var(--bg-card); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);" id="investimento">
     <div class="container">
-      <div class="section__header" style="margin-bottom: 48px;">
+      <div class="section__header" style="margin-bottom: 56px;">
         <span class="label fade-in">INVESTIMENTO ESTRATÉGICO</span>
         <h2 class="section__title fade-in" style="--delay: .05s">
-          Duas operações cobertas.<br>
-          <span class="text-gradient">Uma única gestão.</span>
+          Escolha o plano.<br>
+          <span class="text-gradient">Comece agora.</span>
         </h2>
         <p class="hero__subtitle fade-in" style="--delay: .1s; margin-top: 20px;">
-          Para executar tudo isso, a empresa precisaria contratar múltiplos fornecedores para atender simultaneamente a agência e o grupo de repasse. A proposta centraliza toda essa estrutura em uma única gestão estratégica — com integração entre os setores, menor custo e mais velocidade de execução.
+          Dois planos, uma única gestão centralizada. Sem precisar contratar múltiplos profissionais ou gerenciar fornecedores separados.
         </p>
       </div>
 
-      <div style="max-width: 860px; margin: 0 auto;">
+      <!-- Dois cards de plano -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 920px; margin: 0 auto 48px;" class="fade-in" style="--delay: .1s;">
 
-        <!-- Card principal de preço -->
-        <div class="stat-card fade-in" style="--delay: .1s; padding: 56px 48px; background: var(--bg-primary); position: relative; overflow: hidden; margin-bottom: 32px;">
-          <div style="position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(0,208,132,0.15) 0%, transparent 70%);"></div>
-
-          <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">Investimento mensal</p>
-
-          <div style="display: flex; align-items: baseline; justify-content: center; gap: 8px; margin-bottom: 8px;">
-            <span style="font-size: 28px; color: var(--text-secondary); font-weight: 500;">R$</span>
-            <span class="stat-card__value" style="font-size: 88px; text-shadow: 0 0 40px rgba(0,208,132,0.3);">4.000</span>
-            <span style="font-size: 20px; color: var(--text-secondary);">/ mês</span>
+        <!-- Plano Essencial -->
+        <div class="stat-card" style="padding: 44px 36px; background: var(--bg-primary); position: relative; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="position: absolute; top: -40px; right: -40px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);"></div>
+          <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 11px; color: var(--text-muted); margin-bottom: 20px;">Plano Essencial</p>
+          <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px;">
+            <span style="font-size: 20px; color: var(--text-secondary); font-weight: 500;">R$</span>
+            <span style="font-size: 64px; font-weight: 900; color: var(--white); line-height: 1;">2.500</span>
+            <span style="font-size: 16px; color: var(--text-muted);">/mês</span>
           </div>
-
-          <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 40px;">Cobre as duas operações completas — Agência de Veículos e Grupo de Repasse.</p>
-
-          <!-- O que está incluído -->
-          <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 36px; margin-bottom: 36px;">
-            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 11px; color: var(--text-muted); margin-bottom: 20px;">Tudo incluído na proposta</p>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; text-align: left;">
+          <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 32px; line-height: 1.6;">Operação digital ativa com foco em tráfego, presença e automação.</p>
+          <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; flex: 1;">
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 11px; color: var(--text-muted); margin-bottom: 16px;">Incluso</p>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
               <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span style="color: var(--white); font-size: 15px;">Gestão de tráfego pago</span>
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span style="color: var(--white); font-size: 15px;">Gestão de Tráfego Pago</span>
               </div>
               <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span style="color: var(--white); font-size: 15px;">Social media</span>
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span style="color: var(--white); font-size: 15px;">Social Media</span>
               </div>
               <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span style="color: var(--white); font-size: 15px;">Automação para Instagram</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span style="color: var(--white); font-size: 15px;">Automação Grupo de Repasse</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span style="color: var(--orange); font-size: 15px; font-weight: 600;">Presencial semanal na loja</span>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top: 32px; padding: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; text-align: center;">
+            <p style="color: var(--text-muted); font-size: 13px;">Vs. contratar separado: <span style="color: rgba(255,255,255,0.5); text-decoration: line-through;">R$ 7.000/mês</span></p>
+          </div>
+        </div>
+
+        <!-- Plano Completo -->
+        <div class="stat-card" style="padding: 44px 36px; background: var(--bg-primary); position: relative; overflow: hidden; border: 1px solid rgba(0,208,132,0.3); display: flex; flex-direction: column;">
+          <div style="position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(0,208,132,0.18) 0%, transparent 70%);"></div>
+          <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 11px; color: var(--orange); margin-bottom: 20px;">Plano Completo</p>
+          <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px;">
+            <span style="font-size: 20px; color: var(--text-secondary); font-weight: 500;">R$</span>
+            <span style="font-size: 64px; font-weight: 900; color: var(--white); line-height: 1; text-shadow: 0 0 40px rgba(0,208,132,0.3);">4.000</span>
+            <span style="font-size: 16px; color: var(--text-muted);">/mês</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 32px; line-height: 1.6;">Estrutura digital integrada cobrindo as duas operações completas.</p>
+          <div style="border-top: 1px solid rgba(0,208,132,0.15); padding-top: 28px; flex: 1;">
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 11px; color: var(--text-muted); margin-bottom: 16px;">Tudo do Essencial, mais:</p>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 <span style="color: var(--white); font-size: 15px;">Sites e landing pages</span>
               </div>
               <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 <span style="color: var(--white); font-size: 15px;">Trackeamento e métricas</span>
               </div>
               <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span style="color: var(--white); font-size: 15px;">Automações</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span style="color: var(--white); font-size: 15px;">Gestão do grupo de repasse</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 <span style="color: var(--white); font-size: 15px;">Marketing digital e blog</span>
               </div>
               <div style="display: flex; align-items: center; gap: 10px;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span style="color: var(--white); font-size: 15px;">Gestão do grupo de repasse</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 <span style="color: var(--white); font-size: 15px;">Captação de consignação</span>
               </div>
-              <div style="display: flex; align-items: center; gap: 10px; grid-column: span 2;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span style="color: var(--orange); font-size: 15px; font-weight: 600;">Acompanhamento presencial semanal na loja</span>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span style="color: var(--orange); font-size: 15px; font-weight: 600;">Presencial semanal na loja</span>
               </div>
             </div>
           </div>
-
-          <!-- Comparativo de economia -->
-          <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 32px;">
-            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 11px; color: var(--text-muted); margin-bottom: 20px;">Comparativo de custo</p>
-            <div style="display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;">
-              <div style="text-align: center;">
-                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">Equipe fragmentada</p>
-                <p style="font-size: 26px; font-weight: 900; color: rgba(255,255,255,0.35); text-decoration: line-through;">R$ 17.100/mês</p>
-              </div>
-              <div style="font-size: 22px; color: var(--text-muted);">→</div>
-              <div style="text-align: center;">
-                <p style="font-size: 12px; color: var(--orange); margin-bottom: 6px;">Proposta integrada</p>
-                <p style="font-size: 32px; font-weight: 900; color: var(--white);">R$ 4.000/mês</p>
-              </div>
-            </div>
-            <div style="margin-top: 24px; padding: 16px 24px; background: rgba(0,208,132,0.08); border: 1px solid rgba(0,208,132,0.2); border-radius: 12px; text-align: center;">
-              <p style="color: var(--orange); font-size: 20px; font-weight: 800; margin-bottom: 4px;">Economia de R$ 13.100 por mês</p>
-              <p style="color: var(--text-muted); font-size: 14px;">Redução de 76,6% nos custos da operação digital — sem abrir mão de nenhuma frente.</p>
-            </div>
+          <div style="margin-top: 32px; padding: 14px; background: rgba(0,208,132,0.08); border: 1px solid rgba(0,208,132,0.2); border-radius: 10px; text-align: center;">
+            <p style="color: var(--text-muted); font-size: 13px;">Vs. contratar separado: <span style="color: rgba(255,255,255,0.5); text-decoration: line-through;">R$ 17.100/mês</span></p>
           </div>
         </div>
 
       </div>
+
+      <!-- Bloco economia geral -->
+      <div class="fade-in" style="--delay: .2s; max-width: 920px; margin: 0 auto; padding: 28px 36px; background: rgba(0,208,132,0.06); border: 1px solid rgba(0,208,132,0.18); border-radius: 16px; text-align: center;">
+        <p style="color: var(--text-muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Independente do plano escolhido</p>
+        <p style="color: var(--white); font-size: 18px; font-weight: 700; margin-bottom: 6px;">Gestão centralizada · Sem retrabalho · Sem custo de equipe interna</p>
+        <p style="color: var(--text-muted); font-size: 14px;">Uma única referência para marketing, automação e operação digital — integrada, estratégica e com acompanhamento contínuo.</p>
+      </div>
+
     </div>
   </section>
 
